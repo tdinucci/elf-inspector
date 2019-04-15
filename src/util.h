@@ -6,7 +6,7 @@
 using namespace std;
 
 namespace elf {
-void position_stream(istream& stream, streampos pos);
+    void position_stream(istream& stream, streampos pos);
 }
 
 #endif

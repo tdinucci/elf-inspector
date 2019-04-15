@@ -8,22 +8,22 @@
 using namespace std;
 
 namespace elf {
-class Section {
- protected:
-  streampos file_offset;
-  Elf64_Xword size;
-  vector<byte> content;
+    class Section {
+    protected:
+        streampos file_offset;
+        Elf64_Xword size;
+        vector<byte> content;
 
-  void initialise(ifstream& istream);
+        void initialise(ifstream& istream);
 
- public:
-  Section() = delete;
-  Section(ifstream& istream, streampos file_offset, Elf64_Xword size);
-  virtual ~Section();
+    public:
+        Section() = delete;
+        Section(ifstream& istream, streampos file_offset, Elf64_Xword size);
+        virtual ~Section();
 
-  string get_hex_dump();
-  string get_ascii_dump();
-};
+        string get_hex_dump();
+        string get_ascii_dump();
+    };
 }  // namespace elf
 
 #endif

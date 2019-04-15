@@ -4,18 +4,18 @@
 using namespace elf;
 
 SectionHeader::SectionHeader(ifstream& istream, streampos start_pos) {
-  position_stream(istream, start_pos);
+    position_stream(istream, start_pos);
 
-  istream.read((char*)&name, sizeof(Elf64_Word));
-  istream.read((char*)&type, sizeof(Elf64_Word));
-  istream.read((char*)&flags, sizeof(Elf64_Xword));
-  istream.read((char*)&runtime_addr, sizeof(Elf64_Addr));
-  istream.read((char*)&section_offset, sizeof(Elf64_Off));
-  istream.read((char*)&size, sizeof(Elf64_Xword));
-  istream.read((char*)&link, sizeof(Elf64_Word));
-  istream.read((char*)&info, sizeof(Elf64_Word));
-  istream.read((char*)&addr_align, sizeof(Elf64_Xword));
-  istream.read((char*)&entry_size, sizeof(Elf64_Xword));
+    istream.read((char*) &name, sizeof(Elf64_Word));
+    istream.read((char*) &type, sizeof(Elf64_Word));
+    istream.read((char*) &flags, sizeof(Elf64_Xword));
+    istream.read((char*) &runtime_addr, sizeof(Elf64_Addr));
+    istream.read((char*) &section_offset, sizeof(Elf64_Off));
+    istream.read((char*) &size, sizeof(Elf64_Xword));
+    istream.read((char*) &link, sizeof(Elf64_Word));
+    istream.read((char*) &info, sizeof(Elf64_Word));
+    istream.read((char*) &addr_align, sizeof(Elf64_Xword));
+    istream.read((char*) &entry_size, sizeof(Elf64_Xword));
 }
 
 Elf64_Word SectionHeader::get_name() const { return name; }
